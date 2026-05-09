@@ -1,0 +1,17 @@
+{{ define "content" }}
+<article>
+    <header>
+        <h1>{{ .Title }}</h1>
+        <time>{{ .Date.Format "Jan 02, 2006" }}</time>
+        <div class="tags">
+            {{ range .Tags }}
+            <span class="tag">#{{ . }}</span>
+            {{ end }}
+        </div>
+    </header>
+    <hr>
+    <section>
+        {{ .Content }}
+    </section>
+</article>
+{{ end }}

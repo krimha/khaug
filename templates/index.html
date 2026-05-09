@@ -1,0 +1,27 @@
+{{ define "content" }}
+<section class="intro">
+    <div class="profile-header">
+        <div class="profile-img">👤</div>
+        <div class="profile-text">
+            <h2>About Me</h2>
+            <p>I'm a software engineer exploring the intersections of Go, systems design, and the modern web. Welcome to my digital garden.</p>
+        </div>
+    </div>
+</section>
+
+<section class="posts-section">
+    <h1 class="section-title">Latest Writing</h1>
+    <div class="post-list">
+        {{ range .Posts }}
+        <article class="post-item">
+            <time class="post-date">{{ .Date.Format "Jan 02, 2006" }}</time>
+            <div class="post-detail">
+                <a href="posts/{{ .Slug }}.html" class="post-link">
+                    <h3 class="post-title">{{ .Title }}</h3>
+                </a>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
